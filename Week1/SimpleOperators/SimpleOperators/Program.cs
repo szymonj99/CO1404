@@ -20,16 +20,45 @@ namespace SimpleOperators
 
             // Create user object.
             Person user = new Person();
+            // Ask user if they want to input height in feet and inches, inches, or cm.
+            const int availableInputOptions = 3;
+            bool isNumber = int.TryParse(Console.ReadLine(), out int userInput);
+            while (!isNumber || !(1 <= userInput && userInput <= availableInputOptions))
+            {
+                Console.WriteLine("What would you like to input your height in?\n" +
+                "1. cm\n" +
+                "2. inches\n" +
+                "3. feet and inches.");
+                isNumber = int.TryParse(Console.ReadLine(), out userInput);
+            }
+
+            // Ask for input of type that user selected.
+            switch (userInput)
+            {
+                case 1: // Ask for height in cm.
+                    {
+                        break;
+                    }
+                case 2: // Ask for height in inches.
+                    {
+                        break;
+                    }
+                case 3: // Ask for height in feet and inches.
+                    {
+                        break;
+                    }
+            }
+
             // Ask user to input their height, parse it as int and display it.
-            user.height = IntParseDetail(GetUserDetail("height"));
+            user.height = IntParseDetail(InputUserDetail("height"));
             // While user doesn't input an integer, retry input.
             while (user.height == badReturnVal)
             {
-                user.height = IntParseDetail(GetUserDetail("height"));
+                user.height = IntParseDetail(InputUserDetail("height"));
             }
             // Store user object in array.
             people[0] = user;
-            Console.WriteLine("You are {0} cm.", user.height);
+            Console.WriteLine("You are {0} cm tall.", user.height);
 
             // Create neighbour objects.
             Person neighbour1 = new Person();
@@ -39,14 +68,14 @@ namespace SimpleOperators
             int neighbourNumber = 1;
 
             // Ask for neighbour height.
-            neighbour1.height = GetNeighbourHeight(neighbourNumber);
+            neighbour1.height = InputNeighbourHeight(neighbourNumber);
             Console.WriteLine("The height for neighbour {0} is {1} cm.", neighbourNumber, neighbour1.height);
             // Store neighrbour object in people array.
             people[neighbourNumber] = neighbour1;
             neighbourNumber++;
 
             // Ask for neighbour height.
-            neighbour2.height = GetNeighbourHeight(neighbourNumber);
+            neighbour2.height = InputNeighbourHeight(neighbourNumber);
             Console.WriteLine("The height for neighbour {0} is {1} cm.", neighbourNumber, neighbour2.height);
             // Store neighrbour object in people array.
             people[neighbourNumber] = neighbour2;
@@ -65,7 +94,7 @@ namespace SimpleOperators
         /// Ask the user to input their name.
         /// </summary>
         /// <returns>The user's input.</returns>
-        static string GetUserDetail(string detail)
+        static string InputUserDetail(string detail)
         {
             Console.WriteLine("What is your {0}?", detail);
             return Console.ReadLine();
@@ -77,7 +106,7 @@ namespace SimpleOperators
         /// <param name="neighbourNumber">What neighbour number you are getting information for.</param>
         /// <param name="detail">What do you wish to know about the neighbour.</param>
         /// <returns>User's input.</returns>
-        static string GetNeighbourDetail(int neighbourNumber, string detail)
+        static string InputNeighbourDetail(int neighbourNumber, string detail)
         {
             Console.WriteLine("What is the {0} of your neighbour {1} in cm?", detail, neighbourNumber);
             return Console.ReadLine();
@@ -88,12 +117,12 @@ namespace SimpleOperators
         /// </summary>
         /// <param name="neighbourNumber">What neighbour you want to ask for information.</param>
         /// <returns>Neighbour's height.</returns>
-        static int GetNeighbourHeight(int neighbourNumber)
+        static int InputNeighbourHeight(int neighbourNumber)
         {
-            int neighbourHeight = IntParseDetail(GetNeighbourDetail(neighbourNumber, "height"));
+            int neighbourHeight = IntParseDetail(InputNeighbourDetail(neighbourNumber, "height"));
             while (neighbourHeight == -1)
             {
-                neighbourHeight = IntParseDetail(GetNeighbourDetail(neighbourNumber, "height"));
+                neighbourHeight = IntParseDetail(InputNeighbourDetail(neighbourNumber, "height"));
             }
             return neighbourHeight;
         }
