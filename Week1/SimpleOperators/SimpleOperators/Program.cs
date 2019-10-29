@@ -53,6 +53,10 @@ namespace SimpleOperators
 
             // Print average height for all objects in array.
             Console.WriteLine("Average height: {0} cm.", GetAverageHeight(people));
+            // Print average height in inchesm rounded to two decimal points.
+            Console.WriteLine("Average height: {0} inches.", Math.Round(GetAverageHeight(people) / 2.54, 2, MidpointRounding.AwayFromZero));
+            // Print average height in feet and inches.
+            Console.WriteLine("Average height: {0} feet {1} inches.", Math.Floor(Math.Round(GetAverageHeight(people) / 2.54, 2, MidpointRounding.AwayFromZero) / 12), Math.Round(GetAverageHeight(people) / 2.54, 2, MidpointRounding.AwayFromZero) % 12);
 
             Console.ReadLine();
         }
