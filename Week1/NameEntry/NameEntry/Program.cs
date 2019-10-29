@@ -10,8 +10,8 @@ namespace NameEntry
     {
         static void Main(string[] args)
         {
-            // Ask user to input their name and display it.
-            Console.WriteLine("Welcome, {0}.", GetUserDetail("name"));
+            // Ask user to input their name and surname, then display in reverse order.
+            Console.WriteLine("Welcome {1}, {0}.", GetUserDetail("name"), GetUserDetail("surname"));
 
             // Ask user to input their age, parse it as int and display it.
             int userAge = IntParseUserDetail((GetUserDetail("age")));
@@ -31,7 +31,7 @@ namespace NameEntry
         /// <returns>The user's input.</returns>
         static string GetUserDetail(string detail)
         {
-            Console.WriteLine("Please input your {0}.", detail);
+            Console.Write("Please input your {0}: ", detail);
             return Console.ReadLine();
         }
 
