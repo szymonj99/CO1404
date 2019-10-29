@@ -14,11 +14,11 @@ namespace NameEntry
             Console.WriteLine("Welcome {1}, {0}.", GetUserDetail("name"), GetUserDetail("surname"));
 
             // Ask user to input their age, parse it as int and display it.
-            int userAge = IntParseUserDetail((GetUserDetail("age")));
+            int userAge = IntParseUserDetail(GetUserDetail("age"));
             // While user doesn't input an integer, retry input.
             while (userAge == -1)
             {
-                userAge = IntParseUserDetail((GetUserDetail("age")));
+                userAge = IntParseUserDetail(GetUserDetail("age"));
             }
             Console.WriteLine("You are {0} years old.", userAge);
 

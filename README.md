@@ -6,3 +6,4 @@ The following list is in descending order of completion; most recent projects ar
 ## Week 1
 <a href="Week1/TestApp">TestApp</a>.
 <a href="Week1/NameEntry">NameEntry</a>.
+<a href="Week1/SimpleOperators">SimpleOperators</a>.
