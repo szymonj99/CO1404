@@ -12,21 +12,47 @@ namespace SimpleOperators
         {
             // Declare known bad value for bad return value.
             int badReturnVal = -1;
-            // Ask user to input their height, parse it as int and display it.
-            int userHeight = IntParseDetail(GetUserDetail("height"));
-            // While user doesn't input an integer, retry input.
-            while (userHeight == badReturnVal)
-            {
-                userHeight = IntParseDetail(GetUserDetail("height"));
-            }
-            Console.WriteLine("You are {0} cm.", userHeight);
 
-            // How many neighbours to ask for information?
-            int neighboursToAsk = 2;
-            for (int neighbourNumber = 1; neighbourNumber <= neighboursToAsk; neighbourNumber++)
+            // How many numbers total will we collect, including the user and neighbours.
+            int peopleToAsk = 3;
+            // Create array to store objects.
+            Person[] people = new Person[peopleToAsk];
+
+            // Create user object.
+            Person user = new Person();
+            // Ask user to input their height, parse it as int and display it.
+            user.height = IntParseDetail(GetUserDetail("height"));
+            // While user doesn't input an integer, retry input.
+            while (user.height == badReturnVal)
             {
-                Console.WriteLine("The height for neighbour {0} is {1} cm.", neighbourNumber, GetNeighbourHeight(neighbourNumber));
+                user.height = IntParseDetail(GetUserDetail("height"));
             }
+            // Store user object in array.
+            people[0] = user;
+            Console.WriteLine("You are {0} cm.", user.height);
+
+            // Create neighbour objects.
+            Person neighbour1 = new Person();
+            Person neighbour2 = new Person();
+
+            // What neighbour we are currently asking for height.
+            int neighbourNumber = 1;
+
+            // Ask for neighbour height.
+            neighbour1.height = GetNeighbourHeight(neighbourNumber);
+            Console.WriteLine("The height for neighbour {0} is {1} cm.", neighbourNumber, neighbour1.height);
+            // Store neighrbour object in people array.
+            people[neighbourNumber] = neighbour1;
+            neighbourNumber++;
+
+            // Ask for neighbour height.
+            neighbour2.height = GetNeighbourHeight(neighbourNumber);
+            Console.WriteLine("The height for neighbour {0} is {1} cm.", neighbourNumber, neighbour2.height);
+            // Store neighrbour object in people array.
+            people[neighbourNumber] = neighbour2;
+
+            // Print average height for all objects in array.
+            Console.WriteLine("Average height: {0} cm.", GetAverageHeight(people));
 
             Console.ReadLine();
         }
@@ -87,6 +113,21 @@ namespace SimpleOperators
                 Console.WriteLine("Not an whole number.");
                 return -1;
             }
+        }
+
+        /// <summary>
+        /// Gets the average height from people array.
+        /// </summary>
+        /// <param name="peopleArray">An array that stores Person objects with a height property.</param>
+        /// <returns>Double of the average height.</returns>
+        static double GetAverageHeight(Array peopleArray)
+        {
+            int runningHeightTotal = 0;
+            foreach (Person person in peopleArray)
+            {
+                runningHeightTotal += person.height;
+            }
+            return runningHeightTotal/peopleArray.Length;
         }
     }
 }
