@@ -9,3 +9,6 @@ The following list is in descending order of completion; most recent projects ar
 <a href="Week1/NameEntry">NameEntry</a>.
 
 <a href="Week1/SimpleOperators">SimpleOperators</a>.
+
+## Week 2
+<a href="Week2/VariablesOperatorsConditions">VariablesOperatorsConditions</a>.
