@@ -20,34 +20,6 @@ namespace SimpleOperators
 
             // Create user object.
             Person user = new Person();
-            // Ask user if they want to input height in feet and inches, inches, or cm.
-            const int availableInputOptions = 3;
-            bool isNumber = int.TryParse(Console.ReadLine(), out int userInput);
-            while (!isNumber || !(1 <= userInput && userInput <= availableInputOptions))
-            {
-                Console.WriteLine("What would you like to input your height in?\n" +
-                "1. cm\n" +
-                "2. inches\n" +
-                "3. feet and inches.");
-                isNumber = int.TryParse(Console.ReadLine(), out userInput);
-            }
-
-            // Ask for input of type that user selected.
-            switch (userInput)
-            {
-                case 1: // Ask for height in cm.
-                    {
-                        break;
-                    }
-                case 2: // Ask for height in inches.
-                    {
-                        break;
-                    }
-                case 3: // Ask for height in feet and inches.
-                    {
-                        break;
-                    }
-            }
 
             // Ask user to input their height, parse it as int and display it.
             user.height = IntParseDetail(InputUserDetail("height"));
