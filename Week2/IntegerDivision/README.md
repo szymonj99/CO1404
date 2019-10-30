@@ -1,0 +1,3 @@
+# Integer Division.
+
+This project uses .NET Framework 4.7.2.
