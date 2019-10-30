@@ -16,3 +16,5 @@ The following list is in descending order of completion; most recent projects ar
 <a href="Week2/BirthYear">BirthYear</a>.
 
 <a href="Week2/IntegerDivision">IntegerDivision</a>.
+
+<a href="Week2/CurrencyConverter">CurrencyConverter</a>.
