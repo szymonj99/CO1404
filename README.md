@@ -40,3 +40,10 @@ The following list is in descending order of completion; most recent projects ar
 <a href="Week4/Calendar">Calendar</a>
 
 <a href="Week4/Fibonacci">Fibonacci</a>
+
+## Week 5
+<a href="Week5/NestedShapes">NestedShapes</a>
+
+<a href="Week5/NestedNumberGrid">NestedNumberGrid</a>
+
+<a href="Week5/AdvancedTask">AdvancedTask</a>
