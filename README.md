@@ -47,3 +47,9 @@ The following list is in descending order of completion; most recent projects ar
 <a href="Week5/NestedNumberGrid">NestedNumberGrid</a>
 
 <a href="Week5/AdvancedTask">AdvancedTask</a>
+
+## Week 6
+<a href="Week6/Arrays">Arrays</a>
+
+## Week 7
+<a href="Week7/NetworkToolbox">NetworkToolbox</a>
